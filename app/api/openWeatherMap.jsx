@@ -2,8 +2,6 @@ var axios = require('axios');
 
 const OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=71309b1222fa15ef2e289c840f96cb60';
 
-// 71309b1222fa15ef2e289c840f96cb60
-
 module.exports = {
   getTemp: function (location) {
     var encodedLocation = encodeURIComponent(location)
@@ -17,7 +15,8 @@ module.exports = {
       }
 
     }, function (res) {
-      throw new Error(res.data.message)
+      throw new Error("Unable to featch Weather for that location");
     });
   }
 }
+// 71309b1222fa15ef2e289c840f96cb60
